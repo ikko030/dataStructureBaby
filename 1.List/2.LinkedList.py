@@ -10,11 +10,11 @@ class LinkedListBasic:
         self.__numItems = 0
 
     # 원소 삽입
-    def insert(self, i: int, newItem):
+    def insert(self, i: int, newItem):              # dummy => 10 => 12// newItem = 11
         if i >= 0 and i <= self.__numItems:
-            prev = self.__getNode(i - 1)
+            prev = self.__getNode(i - 1)            #prev = 10
             newNode = ListNode(newItem, prev.next)  # newNode(newItem, prev.next =>12)
-            prev.next = newNode  # prev.next => newNode
+            prev.next = newNode                     # prev.next => newNode
 
             self.__numItems += 1
 
@@ -65,7 +65,7 @@ class LinkedListBasic:
             if curr.item == x:
                 return (prev, curr)
             else:
-                prev = curr;
+                prev = curr
                 curr = curr.next  # 다음 노드로 이동
 
         return (None, None)
